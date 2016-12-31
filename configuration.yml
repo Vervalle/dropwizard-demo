@@ -1,0 +1,6 @@
+messages:
+  hello: Hello world!
+environment: dev
+maxLength: 100
+dateFormat: yyyy-MM-dd'T'HH:mmZ
+
