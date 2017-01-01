@@ -25,5 +25,6 @@ URI: /task-list?contains=XXX
 ## CRUD opertions on an in-memory repository
 How to implement create, read, update, delete operations (CRUD) on a resource.
 
-URI: /events/, /events/{id}
-implement GET, POST, PUT, DELETE
+URI: /events/, /events/{id}, implement GET, POST, PUT, DELETE
+
+I'm using POSTMAN, a powerful GUI platform to make your API development faster & easier, from building API requests through testing, documentation and sharing.
