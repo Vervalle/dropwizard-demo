@@ -1,5 +1,5 @@
 # dropwizard-demo
-Dropwizard Project in which some resources have been implemented coming from distinct tutorials on-line.
+Dropwizard Project in which some resources have been implemented coming from distinct on-line tutorials.
 
 ## Echo
 Simply echoes the query parameter echo.
