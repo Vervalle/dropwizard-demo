@@ -22,7 +22,7 @@ Return all running tasks containing XXX in name. If contains is ommitted, return
 
 URI: /task-list?contains=XXX
 
-## CRUD opertions on an in-memory repository
+## CRUD operations upon an in-memory repository
 How to implement create, read, update, delete operations (CRUD) on a resource.
 
 URI: /events/, /events/{id}, implement GET, POST, PUT, DELETE
