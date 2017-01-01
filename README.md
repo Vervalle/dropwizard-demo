@@ -1,5 +1,6 @@
 # dropwizard-demo
-Dropwizard Project in which some resources have been implemented coming from distinct on-line tutorials. The purpose is cleary to learn how to use the framework. 
+Dropwizard Project in which some resources have been implemented coming from distinct on-line tutorials. 
+The purpose is cleary to learn how to build a simple RESTful web service with Dropwizard.. 
 
 ## Echo
 Simply echoes the query parameter echo.
@@ -18,5 +19,6 @@ Return all running tasks containing XXX in name. If contains is ommitted, return
 URI: /task-list?contains=XXX
 
 ## CRUD opertions on an in-memory repository
+How to implement create, read, update, delete operations (CRUD) on a resource.
 URI: /events/, /events/{id}
 implement GET, POST, PUT, DELETE
