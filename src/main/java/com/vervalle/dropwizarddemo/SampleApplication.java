@@ -10,6 +10,8 @@ package com.vervalle.dropwizarddemo;
 
  */
 
+import com.mongodb.Mongo;
+import com.mongodb.MongoClient;
 import com.vervalle.dropwizarddemo.resources.*;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
@@ -18,6 +20,9 @@ import io.dropwizard.setup.Environment;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
+import org.mongodb.morphia.Datastore;
+import org.mongodb.morphia.Morphia;
+
 public class SampleApplication extends Application<SampleConfiguration> {
 
     public static void main(String[] args) throws Exception {
@@ -25,7 +30,8 @@ public class SampleApplication extends Application<SampleConfiguration> {
     }
 
     @Override
-    public void initialize(Bootstrap<SampleConfiguration> bootstrap) {}
+    public void initialize(Bootstrap<SampleConfiguration> bootstrap) {
+    }
 
     @Override
     public String getName() {
@@ -34,16 +40,32 @@ public class SampleApplication extends Application<SampleConfiguration> {
 
     @Override
     public void run(SampleConfiguration configuration, Environment environment) throws Exception {
+
+        /**
+         * Greetings
+         */
         final GreetingsResource resource_name = new GreetingsResource();
         environment.jersey().register(resource_name);
 
+
+        /**
+         * Hello world
+         */
         final HelloworldResource resource_world = new HelloworldResource(configuration.getMessages());
         environment.jersey().register(resource_world);
 
+
+        /**
+         * Echo
+         */
         final EchoResource resource_echo = new EchoResource();
         environment.jersey().register(resource_echo);
 //        http://localhost:8080/echo?echo=Garett Lebeau
 
+
+        /**
+         * Task list
+         */
         final TaskListResource resource_taskList = new TaskListResource(
                 configuration.getMaxLength()
         );
@@ -51,6 +73,9 @@ public class SampleApplication extends Application<SampleConfiguration> {
 //        http://localhost:8080/task-list?contains=chrome
 //        http://localhost:8080/task-list
 
+        /**
+         * Event
+         */
         DateFormat eventDateFormat = new SimpleDateFormat(configuration.getDateFormat());
         environment.getObjectMapper().setDateFormat(eventDateFormat);
 
@@ -61,6 +86,27 @@ public class SampleApplication extends Application<SampleConfiguration> {
 //        http://localhost:8080/events
 //        http://localhost:8080/events/2
 
+        /**
+         * mongoDB
+         */
+        final Morphia morphia = new Morphia();
+
+        // tell Morphia where to find your classes
+        // can be called multiple times with different packages or classes
+        morphia.mapPackage("com.vervalle.models.mongo");
+
+        // create the Datastore connecting to the default port on the local host
+        final Datastore datastore = morphia.createDatastore(
+                new MongoClient(configuration.getMongo().host, configuration.getMongo().port),
+                configuration.getMongo().database);
+
+        datastore.ensureIndexes();
+        environment.jersey().register(new EmployeeResource(datastore));
+
+
+        /**
+         *
+         */
         System.out.println(getName() + " is now running on " +
                 configuration.getEnvironment() + " environnement");
 

@@ -7,7 +7,7 @@ package com.vervalle.dropwizarddemo.resources;
 import com.google.common.base.Optional;
 import com.codahale.metrics.annotation.Timed;
 import com.google.common.io.CharStreams;
-import com.vervalle.dropwizarddemo.api.Task;
+import com.vervalle.dropwizarddemo.models.Task;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

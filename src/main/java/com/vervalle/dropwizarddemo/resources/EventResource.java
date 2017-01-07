@@ -1,7 +1,7 @@
 package com.vervalle.dropwizarddemo.resources;
 
 import com.vervalle.dropwizarddemo.EventRepository;
-import com.vervalle.dropwizarddemo.api.Event;
+import com.vervalle.dropwizarddemo.models.Event;
 import io.dropwizard.jersey.params.LongParam;
 
 import javax.ws.rs.*;

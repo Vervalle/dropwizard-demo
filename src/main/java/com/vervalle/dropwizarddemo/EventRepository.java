@@ -1,6 +1,6 @@
 package com.vervalle.dropwizarddemo;
 
-import com.vervalle.dropwizarddemo.api.Event;
+import com.vervalle.dropwizarddemo.models.Event;
 
 import java.util.List;
 

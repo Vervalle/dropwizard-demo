@@ -5,7 +5,7 @@ A class that is responsible for reading the properties stored into configuration
  */
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.vervalle.dropwizarddemo.api.Messages;
+import com.vervalle.dropwizarddemo.models.Messages;
 import io.dropwizard.Configuration;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -58,6 +58,15 @@ public class SampleConfiguration extends Configuration{
 
     public String getDateFormat() {
         return dateFormat;
+    }
+
+    // for mongoDB
+
+    @JsonProperty
+    protected MongoConfiguration mongo;
+
+    public MongoConfiguration getMongo() {
+        return mongo;
     }
 
 }

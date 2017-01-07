@@ -1,4 +1,4 @@
-package com.vervalle.dropwizarddemo.api;
+package com.vervalle.dropwizarddemo.models;
 
 import javax.validation.constraints.NotNull;
 

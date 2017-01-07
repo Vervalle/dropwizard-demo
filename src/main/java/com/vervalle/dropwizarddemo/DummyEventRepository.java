@@ -10,7 +10,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
-import com.vervalle.dropwizarddemo.api.Event;
+import com.vervalle.dropwizarddemo.models.Event;
 
 import java.io.IOException;
 import java.net.URL;
