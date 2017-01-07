@@ -14,4 +14,9 @@ public class EmployeeDAOImpl extends BasicDAO<Employee, ObjectId> implements Emp
     public Employee getByName(String name) {
         return createQuery().field("name").equal(name).get();
     }
+
+    public Employee insert(Employee employee) {
+        save(employee);
+        return  employee;
+    }
 }

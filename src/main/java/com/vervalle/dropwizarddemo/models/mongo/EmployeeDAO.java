@@ -5,6 +5,9 @@ import org.mongodb.morphia.dao.DAO;
 
 public interface EmployeeDAO extends DAO<Employee, ObjectId> {
 
-    public Employee getByName(String name);
+    Employee getByName(String name);
+
+    Employee insert(Employee employee);
+
 
 }

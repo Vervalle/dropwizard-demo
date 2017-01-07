@@ -36,8 +36,9 @@ public class EmployeeResource {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
     public Employee create(Employee employee) {
-        db.save(employee);
-        return employee;
+//        db.save(employee);
+//        return employee;
+        return employeeDAO.insert(employee);
     }
 
     @GET
