@@ -27,4 +27,8 @@ How to implement create, read, update, delete operations (CRUD) on a resource.
 
 URI: /events/, /events/{id}, implement GET, POST, PUT, DELETE
 
+## mongoDB datastore CRUD operations
+/w morphia and DAO pattern
+URI: /employees  
+
 I'm using POSTMAN, a powerful GUI platform to make the API development faster & easier, from building API requests through testing, documentation and sharing.

@@ -7,7 +7,6 @@ import org.mongodb.morphia.query.Query;
 
 import java.util.List;
 
-
 public class EmployeeRepositoryImpl extends BasicDAO<Employee, ObjectId> implements EmployeeRepository {
 
     public EmployeeRepositoryImpl(Class<Employee> entityClass, Datastore ds)  {
