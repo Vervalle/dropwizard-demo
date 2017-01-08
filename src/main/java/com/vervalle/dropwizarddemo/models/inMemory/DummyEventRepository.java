@@ -1,4 +1,4 @@
-package com.vervalle.dropwizarddemo;
+package com.vervalle.dropwizarddemo.models.inMemory;
 
 /**
  * EventResource is responsible for for handling HTTP requests. When it needs to access or modify data, it delegates
@@ -10,7 +10,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.type.CollectionType;
 import com.google.common.base.Charsets;
 import com.google.common.io.Resources;
-import com.vervalle.dropwizarddemo.models.Event;
 
 import java.io.IOException;
 import java.net.URL;

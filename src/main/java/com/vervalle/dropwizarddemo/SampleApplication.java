@@ -10,8 +10,9 @@ package com.vervalle.dropwizarddemo;
 
  */
 
-import com.mongodb.Mongo;
 import com.mongodb.MongoClient;
+import com.vervalle.dropwizarddemo.models.inMemory.DummyEventRepository;
+import com.vervalle.dropwizarddemo.models.inMemory.EventRepository;
 import com.vervalle.dropwizarddemo.resources.*;
 import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;

@@ -1,6 +1,4 @@
-package com.vervalle.dropwizarddemo;
-
-import com.vervalle.dropwizarddemo.models.Event;
+package com.vervalle.dropwizarddemo.models.inMemory;
 
 import java.util.List;
 

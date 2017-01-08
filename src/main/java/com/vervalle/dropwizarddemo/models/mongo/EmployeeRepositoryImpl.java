@@ -3,11 +3,14 @@ package com.vervalle.dropwizarddemo.models.mongo;
 import org.bson.types.ObjectId;
 import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.dao.BasicDAO;
+import org.mongodb.morphia.query.Query;
+
+import java.util.List;
 
 
-public class EmployeeDAOImpl extends BasicDAO<Employee, ObjectId> implements EmployeeDAO {
+public class EmployeeRepositoryImpl extends BasicDAO<Employee, ObjectId> implements EmployeeRepository {
 
-    public EmployeeDAOImpl(Class<Employee> entityClass, Datastore ds)  {
+    public EmployeeRepositoryImpl(Class<Employee> entityClass, Datastore ds)  {
         super(entityClass, ds);
     }
 
@@ -18,5 +21,10 @@ public class EmployeeDAOImpl extends BasicDAO<Employee, ObjectId> implements Emp
     public Employee insert(Employee employee) {
         save(employee);
         return  employee;
+    }
+
+    public List<Employee> findAll() {
+        Query<Employee> query = createQuery();
+        return query.asList();
     }
 }

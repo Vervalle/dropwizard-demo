@@ -1,4 +1,4 @@
-package com.vervalle.dropwizarddemo.models;
+package com.vervalle.dropwizarddemo.models.inMemory;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
