@@ -18,6 +18,9 @@ import io.dropwizard.Application;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 
@@ -25,6 +28,8 @@ import org.mongodb.morphia.Datastore;
 import org.mongodb.morphia.Morphia;
 
 public class SampleApplication extends Application<SampleConfiguration> {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SampleApplication.class);
 
     public static void main(String[] args) throws Exception {
         new SampleApplication().run(args);
@@ -41,6 +46,8 @@ public class SampleApplication extends Application<SampleConfiguration> {
 
     @Override
     public void run(SampleConfiguration configuration, Environment environment) throws Exception {
+
+        LOGGER.info("Starting logging ...");
 
         /**
          * Greetings

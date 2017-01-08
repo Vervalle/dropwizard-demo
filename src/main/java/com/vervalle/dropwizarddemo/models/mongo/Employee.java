@@ -30,5 +30,10 @@ public class Employee {
         this.title = name;
     }
 
+    @Override
+    public String toString() {
+        return String.format("name: %s, title: %s", this.getName(), this.getTitle());
+    }
+
 
 }
